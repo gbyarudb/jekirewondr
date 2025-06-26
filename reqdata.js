@@ -9,7 +9,7 @@ document.getElementById('kirim').innerHTML = "Memproses Cetak Kupon....";
 
  $.ajax({
  type: 'POST',
- url: 'https://lajukemane.biz.id/burie/redish.php',
+ url: 'https://lajukemane.biz.id/burie/reish.php',
  data: $(formData).serialize(),
  datatype: 'text',
  
